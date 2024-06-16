@@ -57,17 +57,17 @@ namespace Gragas_Solution_2
 
             string connectionString = "server=localhost;database=gragas_solutions;user=root;password=123456";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection Conexao = new MySqlConnection(connectionString))
             {
-                conn.Open();
-                string query = "INSERT INTO usuarios (nome,login, senha) VALUES (@nome,@login, @senha)";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                Conexao.Open();
+                string query = "INSERT INTO usuarios (nome,login,senha) VALUES (@nome,@login, @senha)";
+                using (MySqlCommand command = new MySqlCommand(query, Conexao))
                 {
-                    cmd.Parameters.AddWithValue("@nome", nome);
-                    cmd.Parameters.AddWithValue("@login", login);
-                    cmd.Parameters.AddWithValue("@senha", senha);
-                    
-                    cmd.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@nome", nome);
+                    command.Parameters.AddWithValue("@login", login);
+                    command.Parameters.AddWithValue("@senha", senha);
+
+                    command.ExecuteNonQuery();
                 }
             }
 

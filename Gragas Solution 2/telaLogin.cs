@@ -19,7 +19,10 @@ namespace Gragas_Solution_2
         {
             InitializeComponent();
         }
-
+        public static MySqlConnection Conexao;
+        public static MySqlCommand Comando;
+        public static MySqlDataAdapter Adaptador;
+        public static DataTable datTabela;
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -30,9 +33,20 @@ namespace Gragas_Solution_2
         {
             this.CenterToScreen();
 
-            var strConexao = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
-            var conexao = new MySqlConnection(strConexao);
-            conexao.Open();
+            //var Conexao = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;");
+            Conexao.Open();
+            Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS gragas_solutions; use gragas_solutions", Conexao);
+
+            Comando.ExecuteNonQuery();
+
+            Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS usuarios " +
+            "( id INT AUTO_INCREMENT PRIMARY KEY, " +
+            "login VARCHAR(100) NOT NULL DEFAULT 0," +
+            "nome VARCHAR(50) NOT NULL DEFAULT 0," +
+            "senha VARCHAR(255) NOT NULL DEFAULT 0)", Conexao);
+            //var conexao = new MySqlConnection(strConexao);
+            //Conexao.Open();
         }
 
 

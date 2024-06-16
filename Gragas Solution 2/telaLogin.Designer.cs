@@ -121,7 +121,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(716, 499);
+            this.linkLabel2.Location = new System.Drawing.Point(448, 558);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(285, 20);
             this.linkLabel2.TabIndex = 8;
@@ -143,7 +143,7 @@
             this.Controls.Add(this.textoLogin);
             this.Name = "telaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Gragas Solution";
             this.Load += new System.EventHandler(this.telaLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
