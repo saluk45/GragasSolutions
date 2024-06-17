@@ -10,7 +10,7 @@
 
 <p align="center">Este repositório contém o código-fonte de um sistema de controle de estoque para uma empresa que produz Controladores Lógicos Programáveis (PLCs). A aplicação permite gerenciar o estoque de componentes críticos, emitindo alertas quando os níveis mínimos são atingidos.</p>
 
-## 📋 <a name="table">Índice</a>
+## 📋 <a name="table">🔗 Índice</a>
 
 2. ⚙️ [Tecnologias](#tech-stack)
 3. 🤸 [Quick Start](#quick-start)
