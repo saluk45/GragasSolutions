@@ -19,6 +19,7 @@ namespace WinFormsApp1
 
 
         public static void conectar()
+
         {
             Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;");
             Conexao.Open();
@@ -28,7 +29,7 @@ namespace WinFormsApp1
 
             Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS quantidadeitens " +
             "( id INT AUTO_INCREMENT PRIMARY KEY, " +
-            "processador INT NOT NULL DEFAULT 1," +
+            "processador INT NOT NULL DEFAULT 0," +
             "memoriasflash INT NOT NULL DEFAULT 0," +
             "cristaisdeclock INT NOT NULL DEFAULT 0," +
             "displayparaohm INT NOT NULL DEFAULT 0," +
@@ -43,7 +44,9 @@ namespace WinFormsApp1
             Conexao.Close();
         }
 
-        public static int PegarValorProcessador(int x)
+
+            //metodos para pegar valores do banco de dados e armazenar em uma variavel
+            public static int PegarValorProcessador(int x)
         {
 
             Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");

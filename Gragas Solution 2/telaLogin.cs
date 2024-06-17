@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
+using static Mysqlx.Expect.Open.Types.Condition.Types;
 
 namespace Gragas_Solution_2
 {
@@ -33,20 +35,41 @@ namespace Gragas_Solution_2
         {
             this.CenterToScreen();
 
-            //var Conexao = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;");
-            Conexao.Open();
-            Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS gragas_solutions; use gragas_solutions", Conexao);
+            // Define a string de conexão
+            string connectionString = "server=localhost;uid=root;pwd=123456;";
 
-            Comando.ExecuteNonQuery();
+            // Conecta ao servidor MySQL
+            using (MySqlConnection conexao = new MySqlConnection(connectionString))
+            {
+                conexao.Open();
 
-            Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS usuarios " +
-            "( id INT AUTO_INCREMENT PRIMARY KEY, " +
-            "login VARCHAR(100) NOT NULL DEFAULT 0," +
-            "nome VARCHAR(50) NOT NULL DEFAULT 0," +
-            "senha VARCHAR(255) NOT NULL DEFAULT 0)", Conexao);
-            //var conexao = new MySqlConnection(strConexao);
-            //Conexao.Open();
+                // Cria o banco de dados se não existir
+                using (MySqlCommand comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS gragas_solutions;", conexao))
+                {
+                    comando.ExecuteNonQuery();
+                }
+
+                // Usa o banco de dados criado
+                using (MySqlCommand comando = new MySqlCommand("USE gragas_solutions;", conexao))
+                {
+                    comando.ExecuteNonQuery();
+                }
+
+                // Cria a tabela usuarios se não existir
+                string createTableQuery = @"
+            CREATE TABLE IF NOT EXISTS usuarios (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                login VARCHAR(100) NOT NULL,
+                nome VARCHAR(50) NOT NULL,
+                senha VARCHAR(255) NOT NULL,
+                UNIQUE KEY login_UNIQUE (login)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+
+                using (MySqlCommand comando = new MySqlCommand(createTableQuery, conexao))
+                {
+                    comando.ExecuteNonQuery();
+                }
+            }
         }
 
 
@@ -55,6 +78,7 @@ namespace Gragas_Solution_2
         {
             string login = textoLogin.Text;
             string senha = textoSenha.Text;
+            Banco.conectar();
 
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha))
             {

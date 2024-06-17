@@ -50,7 +50,7 @@
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 36);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 15;
             this.button1.Text = "Voltar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -71,10 +71,10 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(444, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 42);
+            this.label2.Size = new System.Drawing.Size(228, 39);
             this.label2.TabIndex = 12;
             this.label2.Text = "Registre-se !";
             // 
@@ -87,7 +87,7 @@
             this.textoSenha.Name = "textoSenha";
             this.textoSenha.PasswordChar = '*';
             this.textoSenha.Size = new System.Drawing.Size(125, 29);
-            this.textoSenha.TabIndex = 13;
+            this.textoSenha.TabIndex = 12;
             this.textoSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -98,7 +98,7 @@
             this.label3.Location = new System.Drawing.Point(382, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 29);
-            this.label3.TabIndex = 14;
+            this.label3.TabIndex = 11;
             this.label3.Text = "Data de Nascimento:";
             // 
             // label4
@@ -132,7 +132,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(125, 29);
-            this.textBox3.TabIndex = 17;
+            this.textBox3.TabIndex = 13;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dateTimePicker1
@@ -152,7 +152,7 @@
             this.button2.Location = new System.Drawing.Point(479, 546);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(262, 69);
-            this.button2.TabIndex = 19;
+            this.button2.TabIndex = 14;
             this.button2.Text = "Registrar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.botaoRegistrar_Click);
@@ -187,7 +187,7 @@
             this.textoLogin.Multiline = true;
             this.textoLogin.Name = "textoLogin";
             this.textoLogin.Size = new System.Drawing.Size(279, 29);
-            this.textoLogin.TabIndex = 22;
+            this.textoLogin.TabIndex = 11;
             this.textoLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telaRegistro

@@ -91,7 +91,7 @@ namespace Gragas_Solution_2
             this.labelFontedealimentação.Anchor = System.Windows.Forms.AnchorStyles.None;                      // faz com que o objeto fique centralizado quando em tela cheia
             this.labelFontedealimentação.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F,        // fonte e tamanho do label
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFontedealimentação.Location = new System.Drawing.Point(600, 279);                        // localização na pagina
+            this.labelFontedealimentação.Location = new System.Drawing.Point(600, 205);                        // localização na pagina
             this.labelFontedealimentação.Name = "labelFontedealimentação";                                     // nome do objeto
             this.labelFontedealimentação.Size = new System.Drawing.Size(387, 42);                              //tamanho do texto
             this.labelFontedealimentação.TabIndex = 8;
@@ -177,7 +177,7 @@ namespace Gragas_Solution_2
             this.labelDisplayparaIHM.Name = "labelDisplayparaIHM";
             this.labelDisplayparaIHM.Size = new System.Drawing.Size(311, 42);
             this.labelDisplayparaIHM.TabIndex = 13;
-            if (DisplayparaIHMQnt >= 50) { this.labelDisplayparaIHM.Text = "Pisplay para IHM: " + DisplayparaIHMQnt; } else { this.labelDisplayparaIHM.Text = "Pisplay para IHM: " + DisplayparaIHMQnt +" ;-;"; }
+            if (DisplayparaIHMQnt >= 30) { this.labelDisplayparaIHM.Text = "Display para IHM: " + DisplayparaIHMQnt; } else { this.labelDisplayparaIHM.Text = "Pisplay para IHM: " + DisplayparaIHMQnt +" ;-;"; }
 
             // labelDissipadoresdecalor
             int DissipadoresdecalorQnt = 0;
@@ -190,7 +190,7 @@ namespace Gragas_Solution_2
             this.labelDissipadoresdecalor.Size = new System.Drawing.Size(388, 42);
             this.labelDissipadoresdecalor.TabIndex = 14;
             this.labelDissipadoresdecalor.Click += new System.EventHandler(this.labelDissipadoresdecalor_Click);
-            if (DissipadoresdecalorQnt >= 50) 
+            if (DissipadoresdecalorQnt >= 30) 
             { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorQnt; } 
             else { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorQnt + " ;-;"; }
 
