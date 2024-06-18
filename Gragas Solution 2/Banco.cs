@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 
 namespace WinFormsApp1
 {
@@ -21,26 +22,44 @@ namespace WinFormsApp1
         public static void conectar()
 
         {
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;");
+            // Define a string de conexão
+            string connectionString = "server=localhost;uid=root;pwd=123456;";
+
+            // Conecta ao servidor MySQL
+            Conexao = new MySqlConnection(connectionString);
             Conexao.Open();
-            Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS itens; use itens", Conexao);
 
+            // Cria o banco de dados se não existir
+            Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS itens;", Conexao);
             Comando.ExecuteNonQuery();
 
-            Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS quantidadeitens " +
-            "( id INT AUTO_INCREMENT PRIMARY KEY, " +
-            "processador INT NOT NULL DEFAULT 0," +
-            "memoriasflash INT NOT NULL DEFAULT 0," +
-            "cristaisdeclock INT NOT NULL DEFAULT 0," +
-            "displayparaohm INT NOT NULL DEFAULT 0," +
-            "soquetesdoprocessador INT NOT NULL DEFAULT 0," +
-            "dissipadoresdecalor INT NOT NULL DEFAULT 0," +
-            "fontedealimentacao INT NOT NULL DEFAULT 0)", Conexao);
-
-
+            // Usa o banco de dados criado
+            Comando = new MySqlCommand("USE itens;", Conexao);
             Comando.ExecuteNonQuery();
 
+            // Cria a tabela quantidadeitens se não existir
+            string createTableQuery = @"
+        CREATE TABLE IF NOT EXISTS quantidadeitens (
+            id INT PRIMARY KEY,
+            processador INT NOT NULL DEFAULT 0,
+            memoriasflash INT NOT NULL DEFAULT 0,
+            cristaisdeclock INT NOT NULL DEFAULT 0,
+            displayparaohm INT NOT NULL DEFAULT 0,
+            soquetesdoprocessador INT NOT NULL DEFAULT 0,
+            dissipadoresdecalor INT NOT NULL DEFAULT 0,
+            fontedealimentacao INT NOT NULL DEFAULT 0
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
+            Comando = new MySqlCommand(createTableQuery, Conexao);
+            Comando.ExecuteNonQuery();
+
+            // Insere um registro na tabela quantidadeitens
+            string insertQuery = "INSERT INTO quantidadeitens (id) VALUES (1) " +
+                                 "ON DUPLICATE KEY UPDATE id=id;";
+            Comando = new MySqlCommand(insertQuery, Conexao);
+            Comando.ExecuteNonQuery();
+
+            // Fecha a conexão
             Conexao.Close();
         }
 
