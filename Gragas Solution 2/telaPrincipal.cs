@@ -74,5 +74,124 @@ namespace Gragas_Solution_2
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+        public static int FonteAlimentacaoMetodo()
+        {
+            int FontedealimentaçãoQnt = 0;
+            FontedealimentaçãoQnt = Banco.PegarValorFonteDeAlimentacao(FontedealimentaçãoQnt);
+            return FontedealimentaçãoQnt;
+        }
+
+        public void RetornoTextoFonteAlimentacao()
+        {
+            if (FonteAlimentacaoMetodo() >= 30)
+            { this.labelFontedealimentação.Text = "Fonte de alimentação: " + FonteAlimentacaoMetodo(); }
+            else { this.labelFontedealimentação.Text = "Fonte de alimentação: " + FonteAlimentacaoMetodo() + " ;-;"; }
+            
+        }
+
+
+
+        public static int CristaisdeClockMetodo()
+        {
+            int CristaisdeclockQnt = 0;
+            CristaisdeclockQnt = Banco.PegarValorCristaisDeClock(CristaisdeclockQnt);
+            return CristaisdeclockQnt;
+        }
+
+        public void RetornoTextoCristaisdeClock()
+        {
+            if (CristaisdeClockMetodo() >= 30)
+            { this.labelCristaisdeclock.Text = "Cristais de clock:" + CristaisdeClockMetodo(); }
+            else { this.labelCristaisdeclock.Text = "Cristais de clock:" + CristaisdeClockMetodo() + " ;-;"; }
+
+        }
+
+
+        public static int ProcessadorMetodo()
+        {
+            int ProcessadorQnt = 0;
+            ProcessadorQnt = Banco.PegarValorProcessador(ProcessadorQnt);
+            return ProcessadorQnt;
+        }
+
+        public void ProcessadorRetornoTexto()
+        {
+            if (ProcessadorMetodo() >= 30)
+            { this.labelProcessadores.Text = "Processadores: " + ProcessadorMetodo(); }
+            else { this.labelProcessadores.Text = "Processadores: " + ProcessadorMetodo() + " ;-;"; }
+        }
+
+
+        public static int MemoriasflashMetodo()
+        {
+            int MemoriasflashQnt = 0;
+            MemoriasflashQnt = Banco.PegarValorMemoriasFlash(MemoriasflashQnt);
+            return MemoriasflashQnt;
+        }
+
+        public void MemoriasflashRetornoTexto()
+        {
+            if (MemoriasflashMetodo() >= 60)
+            { this.labelMemóriasflash.Text = "Memórias flash: " + MemoriasflashMetodo(); }
+            else { this.labelMemóriasflash.Text = "Memórias flash: " + MemoriasflashMetodo() + " ;-;"; }
+
+        }
+
+
+        public static int SoquetesdoprocessadorMetodo()
+        {
+            int SoquetesdoprocessadorQnt = 0;
+            SoquetesdoprocessadorQnt = Banco.PegarValorSoquetesDoProcessador(SoquetesdoprocessadorQnt);
+            return SoquetesdoprocessadorQnt;
+        }
+
+        public void RetornoTextoSoquetesdoprocessador()
+        {
+            if (SoquetesdoprocessadorMetodo() >= 30)
+            { this.labelSoquetesdoprocessador.Text = "Soquetes do processador: " + SoquetesdoprocessadorMetodo(); }
+            else { this.labelSoquetesdoprocessador.Text = "Soquetes do processador: " + SoquetesdoprocessadorMetodo() + " ;-;"; }
+
+        }
+
+
+        public static int DisplayparaIHMMetodo()
+        {
+            int DisplayparaIHMQnt = 0;
+            DisplayparaIHMQnt = Banco.PegarValorDisplayParaIHM(DisplayparaIHMQnt);
+            return DisplayparaIHMQnt;
+        }
+
+        public void RetornoTextoDisplayparaIHM()
+        {
+            if (DisplayparaIHMMetodo() >= 30) { this.labelDisplayparaIHM.Text = "Display para IHM: " + DisplayparaIHMMetodo(); }
+            else { this.labelDisplayparaIHM.Text = "Pisplay para IHM: " + DisplayparaIHMMetodo() + " ;-;"; }
+
+        }
+
+
+        public static int DissipadoresdecalorMetodo()
+        {
+            int DissipadoresdecalorQnt = 0;
+            DissipadoresdecalorQnt = Banco.PegarValorDissipadoresDeCalor(DissipadoresdecalorQnt);
+            return DissipadoresdecalorQnt;
+        }
+
+        public void RetornoTextoDissipadoresdecalor()
+        {
+            if (DissipadoresdecalorMetodo() >= 30)
+            { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorMetodo(); }
+            else { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorMetodo() + " ;-;"; }
+
+        }
     }
 }

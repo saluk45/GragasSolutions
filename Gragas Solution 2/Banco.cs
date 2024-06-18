@@ -30,16 +30,16 @@ namespace WinFormsApp1
             Conexao.Open();
 
             // Cria o banco de dados se não existir
-            Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS itens;", Conexao);
+            Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS gragas_solutions;", Conexao);
             Comando.ExecuteNonQuery();
 
             // Usa o banco de dados criado
-            Comando = new MySqlCommand("USE itens;", Conexao);
+            Comando = new MySqlCommand("USE gragas_solutions;", Conexao);
             Comando.ExecuteNonQuery();
 
             // Cria a tabela quantidadeitens se não existir
             string createTableQuery = @"
-        CREATE TABLE IF NOT EXISTS quantidadeitens (
+            CREATE TABLE IF NOT EXISTS quantidadeitens (
             id INT PRIMARY KEY,
             processador INT NOT NULL DEFAULT 0,
             memoriasflash INT NOT NULL DEFAULT 0,
@@ -48,7 +48,7 @@ namespace WinFormsApp1
             soquetesdoprocessador INT NOT NULL DEFAULT 0,
             dissipadoresdecalor INT NOT NULL DEFAULT 0,
             fontedealimentacao INT NOT NULL DEFAULT 0
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
             Comando = new MySqlCommand(createTableQuery, Conexao);
             Comando.ExecuteNonQuery();
@@ -68,7 +68,7 @@ namespace WinFormsApp1
             public static int PegarValorProcessador(int x)
         {
 
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=gragas_solutions");
             Conexao.Open();
 
 
@@ -84,7 +84,7 @@ namespace WinFormsApp1
         public static int PegarValorMemoriasFlash(int x)
         {
 
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=gragas_solutions");
             Conexao.Open();
 
 
@@ -99,7 +99,7 @@ namespace WinFormsApp1
         public static int PegarValorCristaisDeClock(int x)
         {
 
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=gragas_solutions");
             Conexao.Open();
 
 
@@ -114,7 +114,7 @@ namespace WinFormsApp1
         public static int PegarValorDisplayParaIHM(int x)
         {
 
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=gragas_solutions");
             Conexao.Open();
 
 
@@ -129,7 +129,7 @@ namespace WinFormsApp1
         public static int PegarValorSoquetesDoProcessador(int x)
         {
 
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=gragas_solutions");
             Conexao.Open();
 
 
@@ -144,7 +144,7 @@ namespace WinFormsApp1
         public static int PegarValorDissipadoresDeCalor(int x)
         {
 
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=gragas_solutions");
             Conexao.Open();
 
 
@@ -159,7 +159,7 @@ namespace WinFormsApp1
         public static int PegarValorFonteDeAlimentacao(int x)
         {
 
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=itens");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=123456;database=gragas_solutions");
             Conexao.Open();
 
 

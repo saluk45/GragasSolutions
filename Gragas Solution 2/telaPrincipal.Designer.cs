@@ -28,6 +28,10 @@ namespace Gragas_Solution_2
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+
+       
+
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
@@ -85,8 +89,8 @@ namespace Gragas_Solution_2
             //Os comandos abaixo exibem na tela principal a quantidade no estoque de cada item
 
             //labelFontedealimentação
-            int FontedealimentaçãoQnt = 0;                                                                     // variavel que armazena a quantidade de itens no estoque
-            FontedealimentaçãoQnt = Banco.PegarValorFonteDeAlimentacao(FontedealimentaçãoQnt);                 // metodo para pegar o valor do banco e atribuir a variavel
+            //int FontedealimentaçãoQnt = 0;                                                                     // variavel que armazena a quantidade de itens no estoque
+            //FontedealimentaçãoQnt = Banco.PegarValorFonteDeAlimentacao(FontedealimentaçãoQnt);                 // metodo para pegar o valor do banco e atribuir a variavel
             this.labelFontedealimentação.AutoSize = true;
             this.labelFontedealimentação.Anchor = System.Windows.Forms.AnchorStyles.None;                      // faz com que o objeto fique centralizado quando em tela cheia
             this.labelFontedealimentação.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F,        // fonte e tamanho do label
@@ -98,14 +102,11 @@ namespace Gragas_Solution_2
             this.labelFontedealimentação.Click += new System.EventHandler(this.labelFontedealimentação_Click); // evento ao clicar
 
             //Logica do alarme,se a quantidade for menor que 10%, entao sera executado o alerta
-            if (FontedealimentaçãoQnt >= 30)                                                                    
-            { this.labelFontedealimentação.Text = "Fonte de alimentação: " + FontedealimentaçãoQnt; }
-            else { this.labelFontedealimentação.Text = "Fonte de alimentação: " + FontedealimentaçãoQnt + " ;-;"; }
+            RetornoTextoFonteAlimentacao();
 
 
             // labelCristaisdeclock
-            int CristaisdeclockQnt = 0;
-            CristaisdeclockQnt = Banco.PegarValorCristaisDeClock(CristaisdeclockQnt);
+            
             this.labelCristaisdeclock.AutoSize = true;
             this.labelCristaisdeclock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCristaisdeclock.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,14 +115,11 @@ namespace Gragas_Solution_2
             this.labelCristaisdeclock.Size = new System.Drawing.Size(300, 42);
             this.labelCristaisdeclock.TabIndex = 9;
             this.labelCristaisdeclock.Click += new System.EventHandler(this.labelCristaisdeclock_Click);
-            if (CristaisdeclockQnt >= 30)
-            { this.labelCristaisdeclock.Text = "Cristais de clock:" + CristaisdeclockQnt; }
-            else { this.labelCristaisdeclock.Text = "Cristais de clock:" + CristaisdeclockQnt + " ;-;"; }
+            RetornoTextoCristaisdeClock();
 
 
             // labelProcessadores
-            int ProcessadorQnt = 0;
-            ProcessadorQnt = Banco.PegarValorProcessador(ProcessadorQnt);
+           
             this.labelProcessadores.AutoSize = true;
             this.labelProcessadores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelProcessadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,14 +128,10 @@ namespace Gragas_Solution_2
             this.labelProcessadores.Size = new System.Drawing.Size(279, 42);
             this.labelProcessadores.TabIndex = 10;
             this.labelProcessadores.Click += new System.EventHandler(this.labelProcessadores_Click);
-            if (ProcessadorQnt >= 30)
-            { this.labelProcessadores.Text = "Processadores: " + ProcessadorQnt; }
-            else { this.labelProcessadores.Text = "Processadores: " + ProcessadorQnt + " ;-;"; }
+            ProcessadorRetornoTexto(); 
 
 
             // labelMemóriasflash
-            int MemoriasflashQnt = 0;
-            MemoriasflashQnt = Banco.PegarValorMemoriasFlash(MemoriasflashQnt);
             this.labelMemóriasflash.AutoSize = true;
             this.labelMemóriasflash.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMemóriasflash.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,14 +140,12 @@ namespace Gragas_Solution_2
             this.labelMemóriasflash.Size = new System.Drawing.Size(280, 42);
             this.labelMemóriasflash.TabIndex = 11;
             this.labelMemóriasflash.Click += new System.EventHandler(this.labelMemóriasflash_Click);
-            if (MemoriasflashQnt >= 60)
-            { this.labelMemóriasflash.Text = "Memórias flash: " + MemoriasflashQnt; }
-            else { this.labelMemóriasflash.Text = "Memórias flash: " + MemoriasflashQnt + " ;-;"; }
+            MemoriasflashRetornoTexto();
+
 
 
             // labelSoquetesdoprocessador
-            int SoquetesdoprocessadorQnt = 0;
-            SoquetesdoprocessadorQnt = Banco.PegarValorSoquetesDoProcessador(SoquetesdoprocessadorQnt);
+            
             this.labelSoquetesdoprocessador.AutoSize = true;
             this.labelSoquetesdoprocessador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelSoquetesdoprocessador.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,14 +154,11 @@ namespace Gragas_Solution_2
             this.labelSoquetesdoprocessador.Size = new System.Drawing.Size(466, 42);
             this.labelSoquetesdoprocessador.TabIndex = 12;
             this.labelSoquetesdoprocessador.Click += new System.EventHandler(this.labelSoquetesdoprocessador_Click);
-            if (SoquetesdoprocessadorQnt >= 30)
-            { this.labelSoquetesdoprocessador.Text = "Soquetes do processador: " + SoquetesdoprocessadorQnt; }
-            else { this.labelSoquetesdoprocessador.Text = "Soquetes do processador: " + SoquetesdoprocessadorQnt + " ;-;"; }
+            RetornoTextoSoquetesdoprocessador();
 
 
             // labelDisplayparaIHM
-            int DisplayparaIHMQnt = 0;
-            DisplayparaIHMQnt = Banco.PegarValorDisplayParaIHM(DisplayparaIHMQnt);
+           
             this.labelDisplayparaIHM.AutoSize = true;
             this.labelDisplayparaIHM.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDisplayparaIHM.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,12 +166,11 @@ namespace Gragas_Solution_2
             this.labelDisplayparaIHM.Name = "labelDisplayparaIHM";
             this.labelDisplayparaIHM.Size = new System.Drawing.Size(311, 42);
             this.labelDisplayparaIHM.TabIndex = 13;
-            if (DisplayparaIHMQnt >= 30) { this.labelDisplayparaIHM.Text = "Display para IHM: " + DisplayparaIHMQnt; } 
-              else { this.labelDisplayparaIHM.Text = "Pisplay para IHM: " + DisplayparaIHMQnt +" ;-;"; }
+            RetornoTextoDisplayparaIHM();
+
 
             // labelDissipadoresdecalor
-            int DissipadoresdecalorQnt = 0;
-            DissipadoresdecalorQnt = Banco.PegarValorDissipadoresDeCalor(DissipadoresdecalorQnt);
+            
             this.labelDissipadoresdecalor.AutoSize = true;
             this.labelDissipadoresdecalor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDissipadoresdecalor.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,9 +179,7 @@ namespace Gragas_Solution_2
             this.labelDissipadoresdecalor.Size = new System.Drawing.Size(388, 42);
             this.labelDissipadoresdecalor.TabIndex = 14;
             this.labelDissipadoresdecalor.Click += new System.EventHandler(this.labelDissipadoresdecalor_Click);
-            if (DissipadoresdecalorQnt >= 30) 
-            { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorQnt; } 
-            else { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorQnt + " ;-;"; }
+            RetornoTextoDissipadoresdecalor();
 
             // telaPrincipal
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

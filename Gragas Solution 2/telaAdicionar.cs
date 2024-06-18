@@ -25,7 +25,7 @@ namespace Gragas_Solution_2
             int ValorAdd = int.Parse(textBox1.Text);                                                                 //Valor inserido na caixa transformado em int e depois na variavel
 
             if (listBox1.SelectedItem.ToString() == "Processadores")                                                 //testa se essa e a opcao escolhida
-            { string connectionString = "server=localhost;uid=root;pwd=123456;database=itens";                       //passa o endereco para conectar ao banco
+            { string connectionString = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";                       //passa o endereco para conectar ao banco
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))                              //instancia a conexao
                 {
                     conexao.Open();                                                                                  //abre a conexao
@@ -42,7 +42,7 @@ namespace Gragas_Solution_2
 
             if (listBox1.SelectedItem.ToString() == "Memorias Flash")
             {
-                string connectionString = "server=localhost;uid=root;pwd=123456;database=itens";
+                string connectionString = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
@@ -59,7 +59,7 @@ namespace Gragas_Solution_2
 
             if (listBox1.SelectedItem.ToString() == "Cristais de Clock")
             {
-                string connectionString = "server=localhost;uid=root;pwd=123456;database=itens";
+                string connectionString = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
@@ -76,7 +76,7 @@ namespace Gragas_Solution_2
 
             if (listBox1.SelectedItem.ToString() == "Display para IHM")
             {
-                string connectionString = "server=localhost;uid=root;pwd=123456;database=itens";
+                string connectionString = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
@@ -92,7 +92,7 @@ namespace Gragas_Solution_2
             }
             if (listBox1.SelectedItem.ToString() == "Soquetes de Processador")
             {
-                string connectionString = "server=localhost;uid=root;pwd=123456;database=itens";
+                string connectionString = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
@@ -108,7 +108,7 @@ namespace Gragas_Solution_2
             }
             if (listBox1.SelectedItem.ToString() == "Dissipador de Calor")
             {
-                string connectionString = "server=localhost;uid=root;pwd=123456;database=itens";
+                string connectionString = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
@@ -125,7 +125,7 @@ namespace Gragas_Solution_2
 
             if (listBox1.SelectedItem.ToString() == "Fonte de Alimentação")
             {
-                string connectionString = "server=localhost;uid=root;pwd=123456;database=itens";
+                string connectionString = "server=localhost;uid=root;pwd=123456;database=gragas_solutions";
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
