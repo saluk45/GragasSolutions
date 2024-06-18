@@ -89,8 +89,7 @@ namespace Gragas_Solution_2
             //Os comandos abaixo exibem na tela principal a quantidade no estoque de cada item
 
             //labelFontedealimentação
-            //int FontedealimentaçãoQnt = 0;                                                                     // variavel que armazena a quantidade de itens no estoque
-            //FontedealimentaçãoQnt = Banco.PegarValorFonteDeAlimentacao(FontedealimentaçãoQnt);                 // metodo para pegar o valor do banco e atribuir a variavel
+            
             this.labelFontedealimentação.AutoSize = true;
             this.labelFontedealimentação.Anchor = System.Windows.Forms.AnchorStyles.None;                      // faz com que o objeto fique centralizado quando em tela cheia
             this.labelFontedealimentação.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F,        // fonte e tamanho do label
@@ -100,13 +99,11 @@ namespace Gragas_Solution_2
             this.labelFontedealimentação.Size = new System.Drawing.Size(387, 42);                              //tamanho do texto
             this.labelFontedealimentação.TabIndex = 8;
             this.labelFontedealimentação.Click += new System.EventHandler(this.labelFontedealimentação_Click); // evento ao clicar
-
-            //Logica do alarme,se a quantidade for menor que 10%, entao sera executado o alerta
-            RetornoTextoFonteAlimentacao();
+            RetornoTextoFonteAlimentacao();                                                                    //Metodo onde esta a Logica do alarme,se a quantidade for menor que 10%, entao sera executado o alerta
 
 
             // labelCristaisdeclock
-            
+
             this.labelCristaisdeclock.AutoSize = true;
             this.labelCristaisdeclock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCristaisdeclock.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
