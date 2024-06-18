@@ -84,18 +84,18 @@ namespace Gragas_Solution_2
 
 
 
-        public static int FonteAlimentacaoMetodo()
+        public static int FonteAlimentacaoMetodo()                                                                      //Metodo de criação da variavel, e puxando do banco de dados
         {
-            int FontedealimentaçãoQnt = 0;
-            FontedealimentaçãoQnt = Banco.PegarValorFonteDeAlimentacao(FontedealimentaçãoQnt);
+            int FontedealimentaçãoQnt = 0;                                                                              // variavel que armazena a quantidade de itens no estoque
+            FontedealimentaçãoQnt = Banco.PegarValorFonteDeAlimentacao(FontedealimentaçãoQnt);                          // metodo para pegar o valor do banco e atribuir a variavel
             return FontedealimentaçãoQnt;
         }
 
-        public void RetornoTextoFonteAlimentacao()
+        public void RetornoTextoFonteAlimentacao()                                                                      //Metodo com a logica do alarme e implementação do texto no label
         {
             if (FonteAlimentacaoMetodo() >= 30)
             { this.labelFontedealimentação.Text = "Fonte de alimentação: " + FonteAlimentacaoMetodo(); }
-            else { this.labelFontedealimentação.Text = "Fonte de alimentação: " + FonteAlimentacaoMetodo() + " ;-;"; }
+            else { this.labelFontedealimentação.Text = "Fonte de alimentação: " + FonteAlimentacaoMetodo() + " ⚠"; }
             
         }
 
@@ -112,7 +112,7 @@ namespace Gragas_Solution_2
         {
             if (CristaisdeClockMetodo() >= 30)
             { this.labelCristaisdeclock.Text = "Cristais de clock:" + CristaisdeClockMetodo(); }
-            else { this.labelCristaisdeclock.Text = "Cristais de clock:" + CristaisdeClockMetodo() + " ;-;"; }
+            else { this.labelCristaisdeclock.Text = "Cristais de clock:" + CristaisdeClockMetodo() + " ⚠"; }
 
         }
 
@@ -128,7 +128,7 @@ namespace Gragas_Solution_2
         {
             if (ProcessadorMetodo() >= 30)
             { this.labelProcessadores.Text = "Processadores: " + ProcessadorMetodo(); }
-            else { this.labelProcessadores.Text = "Processadores: " + ProcessadorMetodo() + " ;-;"; }
+            else { this.labelProcessadores.Text = "Processadores: " + ProcessadorMetodo() + " ⚠"; }
         }
 
 
@@ -143,7 +143,7 @@ namespace Gragas_Solution_2
         {
             if (MemoriasflashMetodo() >= 60)
             { this.labelMemóriasflash.Text = "Memórias flash: " + MemoriasflashMetodo(); }
-            else { this.labelMemóriasflash.Text = "Memórias flash: " + MemoriasflashMetodo() + " ;-;"; }
+            else { this.labelMemóriasflash.Text = "Memórias flash: " + MemoriasflashMetodo() + " ⚠"; }
 
         }
 
@@ -159,7 +159,7 @@ namespace Gragas_Solution_2
         {
             if (SoquetesdoprocessadorMetodo() >= 30)
             { this.labelSoquetesdoprocessador.Text = "Soquetes do processador: " + SoquetesdoprocessadorMetodo(); }
-            else { this.labelSoquetesdoprocessador.Text = "Soquetes do processador: " + SoquetesdoprocessadorMetodo() + " ;-;"; }
+            else { this.labelSoquetesdoprocessador.Text = "Soquetes do processador: " + SoquetesdoprocessadorMetodo() + " ⚠"; }
 
         }
 
@@ -174,7 +174,7 @@ namespace Gragas_Solution_2
         public void RetornoTextoDisplayparaIHM()
         {
             if (DisplayparaIHMMetodo() >= 30) { this.labelDisplayparaIHM.Text = "Display para IHM: " + DisplayparaIHMMetodo(); }
-            else { this.labelDisplayparaIHM.Text = "Pisplay para IHM: " + DisplayparaIHMMetodo() + " ;-;"; }
+            else { this.labelDisplayparaIHM.Text = "Display para IHM: " + DisplayparaIHMMetodo() + " ⚠"; }
 
         }
 
@@ -190,7 +190,7 @@ namespace Gragas_Solution_2
         {
             if (DissipadoresdecalorMetodo() >= 30)
             { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorMetodo(); }
-            else { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorMetodo() + " ;-;"; }
+            else { this.labelDissipadoresdecalor.Text = "Dissipadores de calor: " + DissipadoresdecalorMetodo() + " ⚠"; }
 
         }
     }
